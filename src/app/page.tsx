@@ -1,17 +1,34 @@
-import Header from '@/components/layout/Header'
-
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold mb-4">
-          Welcome to FlutterCraft UI
-        </h2>
-        <p className="text-gray-600">
-          Your comprehensive Flutter UI component library
+    <div className="container">
+      <main className="main">
+        <h1 className="title">
+          Flutter UI Component Library
+        </h1>
+        <p className="subtitle">
+          Coming Soon
         </p>
-      </div>
-    </main>
+        <div className="description">
+          <p>Professional, customizable UI components for Flutter developers.</p>
+          <p>Built with performance and developer experience in mind.</p>
+        </div>
+        
+        {/* Optional: Add some additional elements */}
+        <div className="features">
+          <div className="feature">
+            <h3>🎨 Beautiful Design</h3>
+            <p>Carefully crafted components with modern aesthetics</p>
+          </div>
+          <div className="feature">
+            <h3>⚡ High Performance</h3>
+            <p>Optimized for speed and smooth animations</p>
+          </div>
+          <div className="feature">
+            <h3>🔧 Developer Friendly</h3>
+            <p>Easy to integrate with comprehensive documentation</p>
+          </div>
+        </div>
+      </main>
+    </div>
   )
 }
