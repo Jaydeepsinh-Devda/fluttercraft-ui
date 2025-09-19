@@ -21,7 +21,7 @@ export default function FeaturesPreview() {
   return (
     <section className="features-preview">
       <div className="container">
-        <h2 className="section-title">What's Coming</h2>
+        <h2 className="section-title">What&apos;s Coming</h2>
         <div className="features-grid">
           {features.map((feature, index) => (
             <div key={index} className="feature-card">
