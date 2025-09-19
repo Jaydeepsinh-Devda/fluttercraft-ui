@@ -1,0 +1,355 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, .4);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  position: relative;
+  z-index: 2;
+  justify-content: space-between;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary-gradient);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow:
+    0 4px 14px rgba(99, 102, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Menu - Closer to logo */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 0.7rem 1.3rem;
+  border-radius: 10px;
+  position: relative;
+  background: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:hover {
+  color: var(--text-accent);
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+}
+
+.btn-nav-primary {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+.btn-nav-primary:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  cursor: pointer;
+  box-shadow: var(--shadow-glow);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 16px;
+  position: relative;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+  position: absolute;
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+.mobile-menu {
+  display: none;
+  background: rgba(15, 15, 35, 0.2);
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem 2rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: not-allowed;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  background: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  transform: translateX(4px);
+}
+
+.btn-mobile-primary {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 1rem;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: not-allowed;
+  opacity: 0.95;
+  margin-top: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow:
+    0 4px 16px rgba(99, 102, 241, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced scroll effect - Single backdrop-filter only */
+.navigation.scrolled {
+  backdrop-filter: blur(25px) saturate(200%) brightness(1.15);
+  -webkit-backdrop-filter: blur(25px) saturate(200%) brightness(1.15);
+  background: rgba(10, 17, 24, 0.90);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Add smooth entrance animation */
+.navigation {
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Browser-specific backdrop-filter support with better fallbacks */
+@supports (backdrop-filter: blur(1px)) {
+  .navigation {
+    background: rgba(10, 17, 24, 0.15);
+    /* Lighter when blur works */
+  }
+
+  .navigation.scrolled {
+    background: rgba(10, 17, 24, 0.25);
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .navigation {
+    background: rgba(10, 17, 24, 0.95);
+    /* Solid fallback when blur doesn't work */
+  }
+
+  .navigation.scrolled {
+    background: rgba(10, 17, 24, 0.98);
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Additional Chromium-specific fix for Brave/Chrome */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .navigation {
+    /* Force hardware acceleration specifically for Chromium/Brave */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Force hardware acceleration for better performance */
+.navigation,
+.nav-link,
+.btn-nav-primary,
+.mobile-menu-btn {
+  transform: translateZ(0);
+  will-change: backdrop-filter, transform, background;
+}
+
+/* Mobile Navigation - UPDATED with dark background */
+@media (max-width: 768px) {
+
+  .nav-left .nav-menu,
+  .nav-cta {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .nav-container {
+    padding: 1rem;
+  }
+
+  /* Mobile layout adjustment */
+  .nav-left {
+    gap: 1rem;
+  }
+
+  /* FIXED - Dark background for mobile navigation when menu is open */
+  .navigation.menu-open {
+    background: rgba(15, 15, 35, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .mobile-menu {
+    background: rgba(15, 15, 35, 0.98) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  .mobile-nav-link {
+    cursor: pointer;
+  }
+
+  .mobile-nav-link:hover {
+    color: var(--text-accent);
+  }
+
+  .btn-mobile-primary {
+    cursor: pointer;
+  }
+}
