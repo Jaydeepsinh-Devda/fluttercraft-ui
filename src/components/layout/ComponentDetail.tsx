@@ -12,7 +12,7 @@ interface Component {
     slug: string
     description: string
     iframe_url: string
-    code_data: any
+    code_data: unknown
     categories?: {
         name: string
         slug: string

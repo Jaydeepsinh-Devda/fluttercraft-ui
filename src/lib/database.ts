@@ -61,7 +61,7 @@ export async function getComponents(options: {
 }
 
 // Track analytics events (component views, downloads, etc.)
-export async function trackEvent(eventType: string, entityType?: string, entityId?: string, eventData: any = {}) {
+export async function trackEvent(eventType: string, entityType?: string, entityId?: string, eventData: unknown = {}) {
   try {
     const { error } = await supabase
       .from('analytics_events')
@@ -127,7 +127,7 @@ export async function getComponentBySlug(slug: string) {
   }
 }
 
-export function parseCodeData(codeData: any) {
+export function parseCodeData(codeData: unknown) {
   try {
     if (typeof codeData === 'string') {
       return JSON.parse(codeData)
@@ -152,33 +152,6 @@ export async function trackComponentCopy(componentId: string, componentSlug: str
     // Don't fail the main operation if analytics fails
   }
 }
-
-// Helper function to safely parse JSON code_data from database
-// export function parseCodeData(rawCodeData: any): { dart: string; usage: string } {
-//   // If it's already an object, return as-is
-//   if (typeof rawCodeData === 'object' && rawCodeData !== null && rawCodeData.dart) {
-//     return {
-//       dart: rawCodeData.dart || '',
-//       usage: rawCodeData.usage || ''
-//     }
-//   }
-  
-//   // If it's a JSON string, try to parse it
-//   if (typeof rawCodeData === 'string') {
-//     try {
-//       const parsed = JSON.parse(rawCodeData)
-//       return {
-//         dart: parsed.dart || '',
-//         usage: parsed.usage || ''
-//       }
-//     } catch {
-//       return { dart: '', usage: '' }
-//     }
-//   }
-  
-//   // Fallback for any other case
-//   return { dart: '', usage: '' }
-// }
 
 export async function getCategoryBySlug(slug: string) {
   try {
