@@ -76,7 +76,7 @@ export default function CategoryPageClient({ category, components }: CategoryPag
                             <div className="empty-icon">🚧</div>
                             <h3 className="empty-title">Components Coming Soon!</h3>
                             <p className="empty-description">
-                                We're working hard to bring you amazing {category.name.toLowerCase()} components.
+                                We are working hard to bring you amazing {category.name.toLowerCase()} components.
                                 Check back soon for updates!
                             </p>
                             <div className="empty-actions">

@@ -34,7 +34,7 @@ export default function CategoryComponentsGrid({ category, components }: Categor
             <div className="empty-icon">📦</div>
             <h3 className="empty-title">No Components Yet</h3>
             <p className="empty-description">
-              Components for {category.name} are coming soon! We're working hard to bring you amazing Flutter UI components.
+              Components for {category.name} are coming soon! We are working hard to bring you amazing Flutter UI components.
             </p>
           </div>
         </div>
