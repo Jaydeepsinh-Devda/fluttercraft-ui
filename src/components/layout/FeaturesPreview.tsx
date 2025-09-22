@@ -1,21 +1,21 @@
 export default function FeaturesPreview() {
-  const features = [
-    {
-      icon: "📦",
-      title: "Production-Ready Components",
-      description: "Pre-built buttons, forms, navigation, charts, and more — all following Material and Cupertino guidelines."
-    },
-    {
-      icon: "⚡",
-      title: "High-Performance Widgets",
-      description: "Optimized for smooth 60fps animations and transitions, so your apps feel fast, fluid, and reliable."
-    },
-    {
-      icon: "🛠️",
-      title: "Built for Developers",
-      description: "Easy to integrate, fully customizable, with clean documentation — spend less time tweaking UI, more time building features."
-    }
-  ]
+const features = [
+  {
+    icon: "📦",
+    title: "Ready-to-Use UI Components",
+    description: "Browse 20+ Flutter UI elements — from buttons to dashboards — and copy-paste them directly into your project."
+  },
+  {
+    icon: "⚡",
+    title: "Download With State Management",
+    description: "Choose your preferred setup (Provider, Riverpod, Bloc, GetX, etc.) and download a ZIP instantly ready to run."
+  },
+  {
+    icon: "🚀",
+    title: "Save Time, Ship Faster",
+    description: "Skip repetitive UI coding. Focus on building features while we handle the boilerplate for you."
+  }
+]
 
 
   return (

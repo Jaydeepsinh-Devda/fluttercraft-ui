@@ -1,0 +1,343 @@
+/* ===== COMPONENT DETAIL PAGE STYLES ===== */
+
+.component-detail-page {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Header */
+.component-detail-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2rem 0;
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb-item {
+  color: var(--text-secondary);
+}
+
+.breadcrumb-current {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+}
+
+.component-header-info h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.component-header-info p {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+/* Main Content - Split Layout */
+.component-detail-main {
+  padding: 2rem 0;
+}
+
+.detail-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  min-height: 70vh;
+}
+
+/* Code Section */
+.code-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.code-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.code-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.copy-button.copied {
+  background: var(--success-color);
+}
+
+.copy-button .icon {
+  flex-shrink: 0;
+}
+
+/* Code Editor */
+.code-editor-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.code-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.file-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.editor-controls {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.code-editor {
+  display: flex;
+  flex: 1;
+  min-height: 500px;
+  background: #0d1117;
+}
+
+.line-numbers {
+  padding: 1rem 0.5rem;
+  background: #161b22;
+  border-right: 1px solid var(--border-color);
+  user-select: none;
+  min-width: 3rem;
+}
+
+.line-number {
+  font-family: var(--font-mono);
+  font-size: 0.822rem;
+  color: #7c3aed;
+  text-align: right;
+  line-height: 1.5;
+  padding-right: 0.5rem;
+}
+
+.code-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.code-block {
+  padding: 1rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #e6edf3;
+  background: transparent;
+}
+
+/* Preview Section */
+.preview-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.preview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.device-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+/* iPhone 16 Pro Mockup */
+.phone-mockup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iphone-mockup {
+  position: relative;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.iphone-frame {
+  position: relative;
+  width: 320px;
+  height: 640px;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  border-radius: 45px;
+  padding: 12px;
+  border: 2px solid #374151;
+}
+
+.dynamic-island {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: #000;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.iphone-screen {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 33px;
+  overflow: hidden;
+  position: relative;
+}
+
+.component-iframe {
+  border-radius: 33px;
+}
+
+.side-button {
+  position: absolute;
+  background: #374151;
+  border-radius: 2px;
+}
+
+.volume-up {
+  left: -3px;
+  top: 120px;
+  width: 6px;
+  height: 30px;
+}
+
+.volume-down {
+  left: -3px;
+  top: 160px;
+  width: 6px;
+  height: 30px;
+}
+
+.power-button {
+  right: -3px;
+  top: 140px;
+  width: 6px;
+  height: 40px;
+}
+
+.device-info {
+  text-align: center;
+}
+
+.device-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.device-specs {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .detail-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .preview-section {
+    order: -1;
+  }
+  
+  .iphone-frame {
+    width: 280px;
+    height: 560px;
+  }
+}
+
+@media (max-width: 768px) {
+  .component-header-info h1 {
+    font-size: 2rem;
+  }
+  
+  .code-editor {
+    min-height: 400px;
+  }
+  
+  .iphone-frame {
+    width: 240px;
+    height: 480px;
+  }
+}

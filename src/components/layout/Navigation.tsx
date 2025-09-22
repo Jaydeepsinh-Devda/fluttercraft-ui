@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname() // Get current pathname
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,12 @@ export default function Navigation() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Function to check if a link is active
+  const isActiveLink = (href: string) => {
+    if (href.startsWith('#')) return false 
+    return pathname === href
+  }
 
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''} ${isMenuOpen ? 'menu-open' : ''}`}>
@@ -29,9 +37,24 @@ export default function Navigation() {
 
           {/* Desktop Menu - Closer to logo */}
           <div className="nav-menu">
-            <Link href="#components" className="nav-link">Components</Link>
-            <Link href="#templates" className="nav-link">Templates</Link>
-            <Link href="#pricing" className="nav-link">Pricing</Link>
+            <Link 
+              href="/components" 
+              className={`nav-link ${isActiveLink('/components') ? 'active' : ''}`}
+            >
+              Components
+            </Link>
+            <Link 
+              href="#templates" 
+              className={`nav-link ${isActiveLink('/templates') ? 'active' : ''}`}
+            >
+              Templates
+            </Link>
+            <Link 
+              href="#pricing" 
+              className={`nav-link ${isActiveLink('/pricing') ? 'active' : ''}`}
+            >
+              Pricing
+            </Link>
           </div>
         </div>
 
@@ -43,7 +66,7 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="mobile-menu-btn"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
@@ -59,29 +82,29 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="mobile-menu">
-          <Link 
-            href="#components" 
-            className="mobile-nav-link"
+          <Link
+            href="/components"
+            className={`mobile-nav-link ${isActiveLink('/components') ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Components
           </Link>
-          <Link 
-            href="#templates" 
-            className="mobile-nav-link"
+          <Link
+            href="#templates"
+            className={`mobile-nav-link ${isActiveLink('/templates') ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Templates
           </Link>
-          <Link 
-            href="#pricing" 
-            className="mobile-nav-link"
+          <Link
+            href="#pricing"
+            className={`mobile-nav-link ${isActiveLink('/pricing') ? 'active' : ''}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Pricing
           </Link>
-          <button 
-            className="btn-mobile-primary" 
+          <button
+            className="btn-mobile-primary"
             disabled
             onClick={() => setIsMenuOpen(false)}
           >

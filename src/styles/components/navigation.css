@@ -353,3 +353,13 @@
     cursor: pointer;
   }
 }
+
+/* Active state for current page - Same as hover */
+ .nav-link.active {
+  color: var(--text-accent) !important;
+} 
+
+/* Mobile active state */
+.mobile-nav-link.active {
+  color: var(--text-accent) !important;
+} 
