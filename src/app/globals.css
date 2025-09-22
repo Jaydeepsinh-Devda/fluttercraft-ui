@@ -7,6 +7,11 @@
 @import '../styles/components/hero.css';
 @import '../styles/components/footer.css';
 @import '../styles/components/features.css';
+@import '../styles/components/components-page.css'; 
+@import '../styles/components/loading.css';
+@import '../styles/components/category-page.css';
+@import '../styles/components/component-detail.css';
+
 
 /* Reset and base styles */
 * {
@@ -23,7 +28,7 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--bg-primary);
-  scroll-behavior: smooth;
+  data-scroll-behavior: smooth;
 }
 
 /* Force Poppins on all elements */
@@ -60,3 +65,17 @@ body {
   background: var(--accent-color);
   color: white;
 }
+
+/* Category Page Styles */
+.category-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1c 0%, #1a1f2e 100%);
+  color: white;
+}
+
+/* Category Header */
+/* .category-header {
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} */

@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export default function HeroSection() {
   return (
     <section className="hero-section">
@@ -10,21 +12,21 @@ export default function HeroSection() {
           </div>
 
           <h1 className="hero-title">
-            UI components that code like you do.
+            Ready-to-Use Flutter UI
           </h1>
 
           <p className="hero-subtitle">
-            A developer-friendly Flutter component library built for speed, flexibility, and clean code.
+            A developer-friendly platform to grab production-ready Flutter components. Copy the UI code directly or download a ZIP with your preferred state management.
           </p>
 
           <p className="hero-description">
-            Stop reinventing UI — start building apps that scale.
+            Stop wasting time rebuilding the same UI — speed up development with clean, flexible, and production-ready Flutter components.
           </p>
 
           <div className="hero-buttons">
-            <button className="btn-primary" disabled>
+            <Link href="/components" className="btn-primary">
               View Components
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -47,7 +49,7 @@ export default function HeroSection() {
 
               {/* App Content */}
               <div className="app-content">
-    
+
                 {/* Components Showcase */}
                 <div className="components-showcase">
                   <div className="component-item button-comp">
